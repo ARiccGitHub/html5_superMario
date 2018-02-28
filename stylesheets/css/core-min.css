@@ -10,5 +10,26 @@ body {
   position: fixed;
   left: 0;
   bottom: 0;
-  background: url("imgs/groundT.jpg") repeat-x;
+  background: url("imgs/groundTile.jpg") repeat-x;
   background-size: 128px; }
+
+.cloud {
+  height: 125px;
+  width: 125px;
+  position: relative;
+  top: 50px;
+  left: 150px;
+  background: url("imgs/cloudTile.png") no-repeat;
+  background-size: 125px;
+  animation-name: movingCloud;
+  animation-duration: 9s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease; }
+
+@keyframes movingCloud {
+  0% {
+    transform: translatex(0px); }
+  50% {
+    transform: translateX(150px); }
+  100% {
+    transform: translateX(0px); } }
