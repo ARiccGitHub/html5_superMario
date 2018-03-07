@@ -2,17 +2,12 @@
 
 //*** PLACEHOLDERS
 
-%bricks{
-  background: url('imgs/brickBlockTile.png') no-repeat;
-  background-size: contain;
-}
 
 // *** Var ***
 
 $groundTileDim: 128px;
 $question1: url('imgs/questionBlockTile.png');
-$question2: url('imgs/questionBlockTile.png');
-$question3: url('imgs/questionBlockTile.png');
+
 
 body{
   height: 100vh;
@@ -64,7 +59,7 @@ body{
   width: 450px;
   position: fixed;
 
-  top: 360px;
+  top: 370px;
   left: 135px;
 
   animation-name: movingCloud;
@@ -88,15 +83,18 @@ body{
 #c3{
   height: 300px;
   width: 300px;
-  position: fixed;
-  top: 0px;
-  left: 800px;
+  position: absolute;
+  top: 80px;
+  left: 755px;
 
   background:url('imgs/cloudTile.png') no-repeat;
   background-size: 300px;
-
 }
 
+#brick{
+  background: url('imgs/brickBlockTile.png') no-repeat;
+  background-size: contain;
+}
 // *** CLASSES ***
 
 .brick{
@@ -113,13 +111,16 @@ body{
   width: 75px;
   padding: 0;
   margin: 0;
-  background: $question1 no-repeat;
+  background: url('imgs/brickBlockTile.png') no-repeat;
   background-size: contain;
+  animation-name: questionBlock;
+  animation-play-state: paused; //the annimation is pause at the question block displayed
+  animation-duration: 1ms;
 
-  &:hover{
-    @extend %bricks;
-  }
-}
+  &:hover {
+      animation-play-state: running //this is how you trigger
+    }                               // the animation will run
+}                                   // animation end and the hover will loop back to the preset image
 
 .cloud{
   height: 125px;
@@ -149,6 +150,13 @@ body{
 }
 
 // ***** ANIMATIONs ***
+
+@keyframes questionBlock{
+  0%{
+    background: $question1 no-repeat;
+    background-size: contain;
+  }
+}
 
 @keyframes movingCloud{
   0%{

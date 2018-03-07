@@ -1,7 +1,3 @@
-.question:hover {
-  background: url("imgs/brickBlockTile.png") no-repeat;
-  background-size: contain; }
-
 body {
   height: 100vh;
   width: 100vw;
@@ -41,7 +37,7 @@ body {
   height: 75px;
   width: 450px;
   position: fixed;
-  top: 360px;
+  top: 370px;
   left: 135px;
   animation-name: movingCloud;
   animation-duration: 7s;
@@ -60,11 +56,15 @@ body {
 #c3 {
   height: 300px;
   width: 300px;
-  position: fixed;
-  top: 0px;
-  left: 800px;
+  position: absolute;
+  top: 80px;
+  left: 755px;
   background: url("imgs/cloudTile.png") no-repeat;
   background-size: 300px; }
+
+#brick {
+  background: url("imgs/brickBlockTile.png") no-repeat;
+  background-size: contain; }
 
 .brick {
   height: 75px;
@@ -79,8 +79,13 @@ body {
   width: 75px;
   padding: 0;
   margin: 0;
-  background: url("imgs/questionBlockTile.png") no-repeat;
-  background-size: contain; }
+  background: url("imgs/brickBlockTile.png") no-repeat;
+  background-size: contain;
+  animation-name: questionBlock;
+  animation-play-state: paused;
+  animation-duration: 1ms; }
+  .question:hover {
+    animation-play-state: running; }
 
 .cloud {
   height: 125px;
@@ -103,6 +108,11 @@ body {
   left: 775px;
   background: url("imgs/pipeTile.png") no-repeat;
   background-size: 150px 325px; }
+
+@keyframes questionBlock {
+  0% {
+    background: url("imgs/questionBlockTile.png") no-repeat;
+    background-size: contain; } }
 
 @keyframes movingCloud {
   0% {
